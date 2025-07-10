@@ -1,0 +1,388 @@
+html {
+    box-sizing: border-box;
+}
+body {
+    margin:0;
+    padding:0;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    text-align: justify;
+    font-size: 18px;
+}
+body a{
+    text-decoration: none;
+}
+header img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+header{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+#header-general {
+    width: 100%;
+    margin: 0;
+    padding: 10px 20px; /* Padding para que los elementos no toquen los bordes */
+    box-sizing: border-box;
+    background-color: #000000; /* Fondo negro para este header */
+    display: flex; /* ✨ Hacemos que el header sea un contenedor flex ✨ */
+    align-items: center; /* Alinea verticalmente al centro */
+    min-height: 80px; /* Altura mínima para asegurar que se vea bien */
+}
+
+#header-general .menu {
+    padding: 20px;
+    z-index: 10;
+    /* Elimina 'order: 1;' si no usas 'order: 2;' en la imagen. */
+    /* No necesitamos flex-grow: 1; si la imagen se va a mover con margin-left: auto; */
+}
+
+#header-general .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra los ítems del menú dentro del nav.menu */
+
+}
+
+/* La imagen dentro de #header-general - se moverá a la derecha */
+#header-general img {
+    width: 180px; /* Tamaño fijo para el logo, ajusta si lo quieres más grande o pequeño */
+    height: auto;
+    display: block;
+    margin-left:100px;
+}
+
+/* Las demás reglas para .menu li, .menu a, etc., se mantienen. */
+/* Asegúrate de que los márgenes en .menu li sean adecuados para el espacio. */
+#header-general .menu li {
+    font-weight: 200;
+    margin: 0 15px; /* Ajusta el margen entre ítems para un menú más compacto */
+    font-size: 20px; /* Ajusta el tamaño de fuente para un menú más pequeño */
+    transform: scale(1);
+}
+#header-general .menu li:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(228, 207, 159, 0.8);
+}
+#header-general .menu a {
+    text-decoration: none;
+    color: #E4CF9F;
+}
+.menu {
+       position:absolute;
+       bottom: 0;
+       left: 0;
+       width:100%;
+       padding:10px 0;
+       z-index: 10;
+}
+.menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+ 
+}
+.menu li{
+    font-weight: 200;
+    margin: 30px;
+    font-size: 30px;
+    transform: scale(1);
+}
+.menu li:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(228, 207, 159, 0.8); /* Brillo dorado */
+}
+.menu a{
+    text-decoration: none;
+    color: #E4CF9F;
+}
+main {
+    max-width: 1400px;
+    width: calc(100% - 30px);
+    margin: 15px auto;
+    padding: 15px 20px;
+    position: relative;
+    text-align: justify;
+}
+
+#maintext-style{
+    background-color: #E4CF9F;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(160, 121, 82);
+    color: black;
+    box-sizing: border-box;
+    padding:20px;
+}
+main a{
+    color:#000000;
+}
+main a:hover{
+    text-decoration: underline;
+}
+#info-contacto{
+    border: 1px solid #D3B879;
+    padding: 10px;
+}
+#info-contacto ul{
+    list-style: none;
+}
+#info-general{
+    border: 1px solid #D3B879;
+    padding: 10px;
+}
+#faq{
+    background-color: #FFFADD;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(94, 93, 93);
+    color: black;
+    padding:20px;
+    margin-top:15px;
+}
+#faq-border{
+        border: solid 1px #D3B879;
+        padding: 10px;
+}
+.faq-checkbox {
+    display: none;
+}
+.faq-question-label {
+    display: block;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #D3B879;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    position: relative;
+    padding-right: 40px;
+}
+.faq-question-label:hover {
+    background-color: #D3B879;
+}
+.faq-question-label::after {
+    content: "\25BC";
+    position: absolute;
+    left: 0px;
+    top:50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-size: 0.9em;
+    color: #666;
+    transition: transform 0.3s ease;
+}
+.faq-checkbox:checked + .faq-question-label::after {
+    transform: translateY(-50%) rotate(0deg);
+}
+.faq-answer {
+    background-color: #FFFBEB;
+    border: 1px solid #D3B879;
+    border-top: none;
+    padding: 0 15px;
+    overflow:hidden;
+    max-height: 0;
+    transition: max-height 0,5s ease-out, padding 0.5s ease-out;
+}
+.faq-answer p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height:1.6;
+    color: black;
+}
+.faq-checkbox:checked + .faq-question-label +.faq-answer {
+    max-height: 500px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba (0,0,0,0.05);
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #000000;
+    color: #E4CF9F;
+    padding:20px 20px;
+    margin-top: 50px;
+}
+footer a{
+    color:#E4CF9F;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+footer h4 {
+    text-decoration: underline;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+.footer-section {
+    flex: 0 1 auto;
+    min-width: 280px;
+    max-width: 350px;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.footer-contact {
+    margin-right: auto; /* Puedes mantenerlo si quieres la primera a la izquierda */
+}
+
+.footer-social {
+    margin-left: auto;
+    margin-right: auto; /* Mantendrá esta sección centrada */
+}
+
+.footer-nav {
+    margin-left: auto; /* Puedes mantenerlo si quieres la última a la derecha */
+}
+.footer-menu ul{
+    list-style: none;
+    padding: 0;
+}
+
+.social-icon::after{
+    position: absolute;
+}
+.social-icon {
+    width:20px;
+    height:20px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-left:8 px;
+    margin-right: 8px;
+}
+.main-index {
+    padding: 0;
+    margin: 0;
+    max-width: fit-content;
+    width: 100%;
+}
+.main-index h1{
+    font-family: "EB Garamond", serif;
+    text-align: center;
+    font-size: 65px;
+    font-style: italic;
+}
+.presentacion-section{
+    position: relative;
+    width: calc(100% - 30px);
+    margin:30px auto;
+    padding: 30px;
+    background-color: #E4CF9F;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    gap: 30px;
+    max-width: 95%;
+    overflow: hidden;
+
+}
+
+.presentacion-div {
+    padding:30px;
+    min-width: 300px;
+    flex:1;
+}
+.imagen-presentacion{
+    flex-basis: 300px; /* Tamaño base preferido para la imagen (ajusta este valor) */
+    flex-grow: 1; /* Permite que la imagen crezca si hay mucho espacio libre */
+    flex-shrink: 1; /* Permite que la imagen se encoja si hay poco espacio, pero... */
+    min-width: 150px; /* ✨ La imagen no se hará más pequeña de 150px (ajusta este límite) ✨ */
+    max-width: 500px; /* ✨ La imagen no se hará más grande de 400px (ajusta este límite) ✨ */
+    height: auto; /* Para mantener la proporción si la imagen se hace más grande que su alto natural */
+    display: flex; /* Opcional: si quieres centrar la imagen dentro de su wrapper */
+    justify-content: center; /* Centra la imagen horizontalmente dentro de su wrapper */
+    align-items: center;
+}
+.imagen-presentacion img{
+    width: 100%; /* La imagen llenará el 100% del ancho de su wrapper */
+    height: auto; /* Mantiene la proporción */
+    display: block;
+}
+#presentacion-arreglos h2 p{
+    flex-basis: 0; /* Su base inicial es 0, para que flex-grow distribuya desde ahí */
+    flex-grow: 1; /* ✨ Permite que el texto ocupe todo el espacio restante disponible ✨ */
+    flex-shrink: 1; /* Permite que el texto se encoja si es necesario */
+    min-width: 250px; /* ✨ El texto no se hará más pequeño de 250px (ajusta este límite) ✨ */
+    /* Puedes añadir un max-width si no quieres que el texto ocupe demasiado en pantallas muy grandes */
+
+    line-height: 1.6;
+    text-align: justify;
+    padding: 10px; /* Padding interno para el texto si es necesario */
+    background-color: #f9f9f9; /* Para visualizar el área del texto */
+}
+.imagen-partituras img{
+    display: block;
+    max-width: 100%;
+    width:100%;
+    height: auto;
+    margin: 0px;
+}
+.carousel-citas {
+    text-align: center;
+    font-size: 24px; /* Ajusta el tamaño de fuente general */
+    font-style: italic;
+    font-family: "EB Garamond", serif; /* Tu fuente ya definida */
+    margin: 50px auto; /* Centra el contenedor y dale margen */
+    max-width: 1500px; /* Limita el ancho para que no sea demasiado largo */
+    min-height: 220px; /* Un poco de altura para evitar saltos si el texto es corto */
+    display: flex; /* Para centrar el contenido verticalmente si es necesario */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Importante para que las citas no se desborden al cambiar */
+    position: relative; /* Si vas a usar transiciones con position absolute */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.cita {
+    position: absolute; /* Para que se superpongan y podamos controlar la visibilidad */
+    width: 100%;
+    opacity: 0; /* Inicialmente transparentes */
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out; /* Transición suave al aparecer/desaparecer */
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0; /* Elimina el margen por defecto de blockquote */
+}
+
+.cita.active {
+    opacity: 1; /* La cita activa será visible */
+    visibility: visible; 
+}
+
+.cita p {
+    margin-bottom: 10px;
+    font-size: 1.2em; /* Haz el texto un poco más grande */
+}
+
+.cita span {
+    font-size: 0.8em;
+    font-style: normal;
+    color: #666; /* Un color más suave para el autor */
+    margin-top: 5px;
+}
+#cita-main {
+    font-family: "EB Garamond", serif;
+    font-style: italic;
+    font-size: 30px;
+    text-align: center;
+}
