@@ -47,20 +47,26 @@ header {
     background-color: #000000;
     display: flex; /* Habilita Flexbox */
     align-items: center; /* Alinea los ítems verticalmente al centro */
-    justify-content: space-between; /* Mueve el logo a la izquierda y el menú a la derecha */
     min-height: 80px; /* Altura mínima para el header */
+    position: relative;
+    z-index: 5;
 }
-
+.espaciador-header {
+    flex-grow: 1;
+}
 /* Logo dentro de #header-general (Estilo por defecto para TODAS las páginas excepto el index) */
 #header-general img {
     width: 180px; /* Tamaño por defecto del logo en desktop */
     height: auto;
     display: block;
+    margin-right: 20px;
 }
 
 /* Contenedor de navegación (el menú) dentro de #header-general */
 #header-general .menu {
     z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #header-general .menu ul {
