@@ -177,6 +177,10 @@ img, video, iframe { /* Regla general para imágenes y videos, crucial para la r
     margin-top: 0;       /* ¡CLAVE! Elimina el margen superior por defecto del párrafo. */
     margin-bottom: 0;    /* Opcional: ajusta si necesitas espacio después del párrafo */
 }
+.biografia p strong.negrita-sin-color {
+
+    font-weight: inherit;
+}
 .imagenes-miembros {
     display: flex;
     flex-direction: column;
