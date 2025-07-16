@@ -216,7 +216,9 @@ img, video, iframe { /* Regla general para imágenes y videos, crucial para la r
     height: auto;
     display: block;
 }
-
+#img-quinteto {
+    margin:5vw;
+}
 .imagen-partituras {
     width: 100vw;
     position: relative;
