@@ -383,6 +383,40 @@ main a:hover {
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+.dossier {
+    /* El contenedor principal apila sus elementos verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+    
+    width: calc(100% - 60px);
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #E4CF9F;
+    border-radius: 15px;
+}
+.dossier-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+}
+.info-dossier,
+.iframe {
+max-width: 50%;
+}
+.iframe iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+}
+.dossier div:last-child {
+    width: 100%;
+}
 
 /* --- Estilos para el Footer --- */
 footer {
@@ -508,6 +542,12 @@ footer h4 {
     .cita p {
         font-size: 1.1em;
     }
+    .dossier {
+        flex-direction: column; /* Cambia a columna en móviles */
+        padding: 15px; /* Reduce el padding */
+        gap: 15px; /* Reduce el espacio entre elementos */
+        width: calc(100% - 30px); /* Un ancho más apropiado para móviles */
+    }
 }
 
 /* Móviles (hasta 767px) */
@@ -568,6 +608,12 @@ footer h4 {
         padding: 10px 0; /* Padding vertical para un área de clic más grande */
         background-color: transparent;
         transition: background-color 0.3s ease;
+    }
+    .dossier {
+        flex-direction: column; /* Cambia a columna en móviles */
+        padding: 15px; /* Reduce el padding */
+        gap: 15px; /* Reduce el espacio entre elementos */
+        width: calc(100% - 30px); /* Un ancho más apropiado para móviles */
     }
 
     /* Ajustes ESPECÍFICOS para el index en móviles */
@@ -652,5 +698,11 @@ footer h4 {
     }
     #cita-main {
         font-size: 20px;
+    }
+    .dossier {
+        flex-direction: column; /* Cambia a columna en móviles */
+        padding: 15px; /* Reduce el padding */
+        gap: 15px; /* Reduce el espacio entre elementos */
+        width: calc(100% - 30px); /* Un ancho más apropiado para móviles */
     }
 }
