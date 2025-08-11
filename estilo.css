@@ -120,6 +120,12 @@ main {
     position: relative;
     text-align: justify;
 }
+main h1{
+    text-align: center;
+    font-family: "EB Garamond", serif;
+    font-size: 65px;
+    font-style: italic;
+}
 
 img, video, iframe { /* Regla general para imágenes y videos, crucial para la responsividad */
     max-width: 100%;
