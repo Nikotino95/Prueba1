@@ -116,7 +116,6 @@ header {
 }
 
 .pagina-index #header-general img {
-    display: none;
     width: 250px;
 }
 
@@ -442,6 +441,10 @@ main a:hover {
     border-radius: 15px;
 }
 
+.dossier h2 {
+    margin-bottom:0;
+    text-align: center;
+}
 .dossier-top {
     display: flex;
     justify-content: space-between;
@@ -449,7 +452,6 @@ main a:hover {
     width: 100%;
     flex-wrap: wrap;
 }
-
 .info-dossier,
 .iframe {
     max-width: 47.5%;
@@ -544,36 +546,99 @@ footer h4 {
         font-size: 16px;
     }
 
-    .main-index h1 {
-        font-size: 50px;
+    body h1 {
+        font-size: 2em;
     }
 
+    /* HEADER GENERAL */
     #header-general {
         padding: 8px 15px;
         min-height: 70px;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        margin: 0;
+        border: none;
+        line-height: normal;
+        flex-wrap: wrap;
+        position: relative;
     }
 
-    #header-general img {
+    #header-general img{
         width: 150px;
-    }
-
-    #header-general .menu li {
-        font-size: 16px;
-        margin: 0 8px;
+        margin: 0 auto;
+        transform: translateY(-5%);
+        position: relative;
     }
 
     .pagina-index #header-general img {
         width: 200px;
     }
 
-    .pagina-index #header-general .menu li {
-        font-size: 18px;
-        margin: 0 12px;
+    .menu-icono {
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+        color: #E4CF9F;
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
     }
 
+    /* MENÚ */
+    #header-general .menu {
+        width: 100%;
+        position: relative;
+        left: unset;
+        transform: unset;
+        text-align: center;
+    }
+
+    #header-general .menu ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    #header-general .menu.mostrar ul {
+        display: flex;
+    }
+
+    #header-general .menu li {
+        font-size: 16px;
+        margin: 0;
+        padding: 10px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(228, 207, 159, 0.2);
+        line-height: 3em;
+    }
+
+    .pagina-index #header-general .menu li {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    #header-general .menu li:hover {
+        background-color: rgba(228, 207, 159, 0.2);
+        transform: none;
+        text-shadow: none;
+    }
+
+    #header-general .menu li:hover a {
+        color: #E4CF9F;
+    }
+
+    /* SECCIONES */
     .presentacion-section {
         flex-direction: column;
         align-items: center;
@@ -582,7 +647,8 @@ footer h4 {
         width: calc(100% - 20px);
     }
 
-    .presentacion-div, .imagen-presentacion {
+    .presentacion-div,
+    .imagen-presentacion {
         min-width: unset;
         width: 100%;
         max-width: 500px;
@@ -598,6 +664,7 @@ footer h4 {
         font-size: 1.1em;
     }
 
+    /* DOSSIER */
     .dossier {
         flex-direction: column;
         padding: 15px;
@@ -619,36 +686,12 @@ footer h4 {
         clear: both;
         position: static;
     }
-    #header-principal, #header-general {
-        margin: 0;
-        padding: 0;
-        border: none;
-        line-height: 0;
-    }
-        #header-general {
-        justify-content: center; /* Centra horizontalmente todo el contenido del header */
-    }
 
-    #header-general img {
-        margin: 0 auto; /* Asegura que la imagen se centre dentro de su espacio */
-        top:50%;
-        transform: translateY(-5%);
-    }
-
-    #header-general .menu-icono {
-        position: absolute; /* Mueve el ícono de hamburguesa */
-        left: 15px; /* Lo coloca a la derecha del todo */
-        top:50%;
-        transform: translateY(-50%);
-    }
-    #header-general nav {
-        display: block;
-        margin-top: 0;
-        }
     #imagen-header-general {
-        width: 40vw !important;
+        width: 30% !important;
     }
 }
+
 
 /* Móviles (hasta 767px) */
 @media (max-width: 767px) {
@@ -661,12 +704,6 @@ footer h4 {
         padding: 0 10px;
     }
 
-    .menu-icono {
-        display: block;
-        font-size: 2em;
-        cursor: pointer;
-        color: #E4CF9F;
-    }
     #header-principal {
         margin-bottom: 0;
     }
@@ -828,11 +865,6 @@ footer h4 {
         display: flex;
         flex-direction: column;
     }
-        #header-general nav {
-        display: block;
-        margin-top: 0;
-    }
-
 }
 
 /* Móviles muy pequeños (hasta 480px) */
@@ -894,9 +926,5 @@ footer h4 {
         float: none;
         clear: both;
         position: static;
-    }
-        #header-general nav {
-        display: block;
-        margin-top: 0;
     }
 }
