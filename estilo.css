@@ -48,12 +48,12 @@ header {
     width: 60% !important;
     height: auto;
     margin: 0 auto;
-    padding: 10px;
+    padding-top: 10px;
 }
 
 #header-general {
     width: 100%;
-    margin: 0;
+    margin-top: 0;
     padding: 10px 20px;
     box-sizing: border-box;
     background-color: #000000;
@@ -551,6 +551,9 @@ footer h4 {
     #header-general {
         padding: 8px 15px;
         min-height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #header-general img {
@@ -616,6 +619,35 @@ footer h4 {
         clear: both;
         position: static;
     }
+    #header-principal, #header-general {
+        margin: 0;
+        padding: 0;
+        border: none;
+        line-height: 0;
+    }
+        #header-general {
+        justify-content: center; /* Centra horizontalmente todo el contenido del header */
+    }
+
+    #header-general img {
+        margin: 0 auto; /* Asegura que la imagen se centre dentro de su espacio */
+        top:50%;
+        transform: translateY(-5%);
+    }
+
+    #header-general .menu-icono {
+        position: absolute; /* Mueve el ícono de hamburguesa */
+        left: 15px; /* Lo coloca a la derecha del todo */
+        top:50%;
+        transform: translateY(-50%);
+    }
+    #header-general nav {
+        display: block;
+        margin-top: 0;
+        }
+    #imagen-header-general {
+        width: 40vw !important;
+    }
 }
 
 /* Móviles (hasta 767px) */
@@ -634,9 +666,14 @@ footer h4 {
         font-size: 2em;
         cursor: pointer;
         color: #E4CF9F;
-        margin-left: auto;
     }
-    
+    #header-principal {
+        margin-bottom: 0;
+    }
+
+    #header-general {
+        margin-top: 0;
+    }
     #header-general .menu ul {
         display: none;
         flex-direction: column;
@@ -670,8 +707,8 @@ footer h4 {
 
     #header-general .menu {
         width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        left: unset;
+        transform: unset;
         position: relative;
     }
 
@@ -779,14 +816,23 @@ footer h4 {
 
     #header-general img {
         margin: 0 auto; /* Asegura que la imagen se centre dentro de su espacio */
+        padding:10px;
     }
 
     #header-general .menu-icono {
         position: absolute; /* Mueve el ícono de hamburguesa */
         left: 15px; /* Lo coloca a la derecha del todo */
-        padding-bottom: 10px;
-        transform: translateY(-50%);
+        top: 50%;
     }
+        body {
+        display: flex;
+        flex-direction: column;
+    }
+        #header-general nav {
+        display: block;
+        margin-top: 0;
+    }
+
 }
 
 /* Móviles muy pequeños (hasta 480px) */
@@ -848,5 +894,9 @@ footer h4 {
         float: none;
         clear: both;
         position: static;
+    }
+        #header-general nav {
+        display: block;
+        margin-top: 0;
     }
 }
